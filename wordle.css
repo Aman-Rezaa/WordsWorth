@@ -1,0 +1,377 @@
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+    text-decoration: none;
+    
+    cursor: pointer;
+}
+
+.cls{
+    background-color: gold;
+   
+    border-radius: 10px;
+    height: 50px;
+    width: 100px;
+    box-shadow: 0 5px 0;
+    transition: background-color 0.3s ease;
+}
+ .cls:active{
+    background-color: red !important;
+    box-shadow: none !important;
+    transform: translateY(5px) !important;
+}
+.cls:hover{
+    background-color: green !important;
+    color: white !important;
+}
+
+
+
+#img{
+    width: 40px;
+    padding-right: 10px;
+    padding-top: 5px;
+    height: auto;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+#answer{
+    color:#f5ce23;
+}
+hr{
+    width: 500px;
+}
+
+#title{
+    padding-bottom: 0%;
+    padding-right: 5%;
+    margin-top: 0%;
+    
+    font-family: 'Paytone One', sans-serif;
+    
+    font-size: 5vw;
+    
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: url(title-img1.avif);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: animate 30s alternate infinite;
+
+}
+@keyframes animate{
+    from{
+        background-position: 0% 80%;
+    }
+    to{
+        background-position: 100% 50%;
+    }
+}
+.main{
+   
+    display:grid;
+ grid-template-columns: 1fr 2fr 1fr; 
+}
+#board{
+    
+    width: 29vw;
+    height: 60vh;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.hangman{
+   
+    display: flex;
+    flex-wrap: wrap;
+    width: 20vw;
+    height: 50vh;
+}
+#hang-man-img{
+    
+    padding-left: 15%;
+    padding-bottom: 50%;
+    width:20vw;
+    height: 40vh;
+} 
+
+#hang{
+   
+    display: flex;
+    align-items:center;
+    
+}
+.tile{
+    /*Box*/
+    border: 0.1vw solid rgb(19, 18, 18);
+    width: 4.70vw;
+    height: 9.5vh;
+   
+    margin: 0.2vw;
+    border-radius: 1.3vw ;
+    box-shadow: 0.4vw 0.5vh 0.5vh black;
+    /*Text*/
+    color: white;
+    font-family: 'Paytone One', sans-serif;
+    font-size: 2vw;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.correct{
+    background-color: #3fc031;
+    color: white;
+    border-color: white;
+    
+}
+
+.present{
+    background-color: #f5ce23;
+    color: white;
+    border-color: white;
+}
+
+.absent{
+    background-color: #787C7E;
+    color: white;
+    border-color: white;
+}
+
+.keyboard-row{
+    color: white;
+    width: 31vw;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 2.45vw;
+}
+
+.key-tile{
+    width: 2.3vw;
+    height: 2.2vw;
+    margin: 0.15vh;
+    border: 0.15vh solid rgb(12,12,12);
+    border-radius: 0.78vh;
+
+    font-family: 'Paytone One', sans-serif;
+    font-size: 1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enter-key-tile{
+    width: 4.9vw;
+    height: 2.2vw;
+    margin: 0.15vh;
+    border: 0.15vh solid rgb(0, 0, 0);
+    border-radius: 0.78vh;
+
+    font-family: 'Paytone One', sans-serif;
+    font-size: 1.2vw;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#button12{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 12vw;
+    height: 6vh;
+    font-size: 1.5vw;
+    font-weight: 600;
+    color: white;
+    border-radius: 10px;
+    border-color: rgb(255, 255, 255);
+    background-color: black;
+    cursor: pointer;
+    letter-spacing: 0.05vh;
+    z-index: 1;
+    font-family: 'Paytone One', sans-serif;
+}
+#button12::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: gold;
+  border-radius: 10px;
+  z-index: -1;
+  transition: .8s;
+  font-family: 'Paytone One', sans-serif;
+}
+#button12:hover::before{
+    width: 100%;
+}
+
+
+
+ .game-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    /* pointer-events: none; */
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -10;
+    padding: 0 1.57vh;
+    transition: opacity 2s ease;
+    cursor: pointer;
+}
+
+ .game-modal.show {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.4s 0.4s ease;
+}
+.game-modal .content {
+   
+    padding: 2vh;
+    max-width: 27.6vw;
+    width: 100%;
+    border-radius: 10px;
+    background: white;
+    color: black;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    font-family: 'Paytone One', sans-serif;
+    
+}
+.game-modal img {
+    max-width: 8.55vw;
+    
+
+    margin-bottom: 20px;
+}
+.game-modal img[src="victory.gif"] {
+    margin-left: -10px;
+}
+.game-modal h4 {
+    font-size: 1.53vw;
+}
+.game-modal p {
+    font-size: 1.2vw;
+    margin: 15px 0 30px;
+    font-weight: 500;
+}
+.game-modal p b {
+    color: rgb(110, 12, 12);
+    font-weight: 600;
+}
+.game-modal button {
+    padding: 0.79vw 3.6vh;
+}
+@media (max-width: 51.45vw) {
+    .game-modal img {
+        max-width: 7.9vw;
+    }
+    .game-modal h4 {
+        font-size: 1.45rem;
+    }
+    .game-modal p {
+        font-size: 1.1rem;
+    }
+    .game-modal button {
+        padding: 0.658vw 2.81vh;
+    }
+}
+.play-again{
+    /* width: ; */
+    /* height: 100%; */
+    background: skyblue;
+    border-radius: 10px;
+    font-size: 1vw;
+    /* font-size: 1.2rem; */
+    font-family: 'Paytone One', sans-serif;
+    border: 3px solid black;
+    cursor: pointer;
+}
+
+
+
+@import "https://unpkg.com/open-props" layer(design.system);
+@import "https://unpkg.com/open-props/normalize.min.css" layer(demo.support);
+
+
+
+
+.rules{
+    display: flex-inline;
+    flex-wrap: wrap;
+    width:24.5vw;
+    height: 60vh;
+
+}
+
+
+
+.rule-1{
+    width: 24vw;
+    height: 9vh;
+    padding-bottom: 15%;
+    margin-top: -30%;
+   font-family: "Paytone one", sans-serif;
+font-size: 2.5vw;
+color: gold;
+display: flex;
+justify-content: center;
+
+}
+
+
+.rule-2{
+    width: 24vw;
+    height: 30vh;
+    padding-top: -15%;
+    font-family: "Paytone one", sans-serif;
+    font-size: 0.9vw;
+    color: white;
+}
+
+
+.output{
+    padding-top: 10%;
+    z-index: 0;
+    /* background-color: aliceblue; */
+    display: none;
+    color: white;
+    
+}
+.mid{
+    margin-top: 2vh;
+    text-align: center;
+}
