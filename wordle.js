@@ -304,7 +304,6 @@ function update() {
         if(guess===word){
             findEnd=2;
             updateHangmanImage();
-            // return alert('🏆🏆🏆CONGRATULATIONS🏆🏆🏆');
         }
     }
     
