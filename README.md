@@ -1,2 +1,2 @@
-# wordsworth
+# WordsWorth
 FRONT-END PROJECT WORDSWORTH
